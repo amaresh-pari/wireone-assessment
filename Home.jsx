@@ -9,7 +9,8 @@ import {
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
 import * as Location from "expo-location";
-import chagingPods from './chargingPodLocations.json'
+import chagingPods from "./chargingPodLocations.json";
+import ChargingPodCard from "./ChargingPodCard";
 
 const Home = () => {
   const [location, setLocation] = useState();
@@ -76,6 +77,12 @@ const Home = () => {
           />
         ))}
       </MapView>
+
+      <ScrollView style={styles.carousel} horizontal>
+        {chagingPods.chargers.map((charger, index) => (
+          <ChargingPodCard key={index} chargingPod={charger} />
+        ))}
+      </ScrollView>
     </View>
   );
 };
@@ -93,6 +100,11 @@ const styles = StyleSheet.create({
   marker: {
     height: 40,
     width: 40,
+  },
+  carousel: {
+    position: "absolute",
+    bottom: 0,
+    paddingBottom: 20,
   },
 });
 
