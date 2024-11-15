@@ -18,7 +18,7 @@
         "NSLocationWhenInUseUsageDescription": "We need your location to show your current position on the map.",
         "NSLocationAlwaysUsageDescription": "We need your location in the background to provide real-time updates."
       },
-      "bundleIdentifier": "com.amaresh-07.WireoneAssessment"
+      "bundleIdentifier": "com.amaresh.WireoneAssessment"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,8 +29,9 @@
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
       ],
-      "package": "com.amaresh07.Wireoneassessment"
+      "package": "com.amaresh.Wireoneassessment"
     },
+    "scheme": "com.amaresh.WireoneAssessment",
     "web": {
       "favicon": "./assets/favicon.png"
     },

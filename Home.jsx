@@ -13,6 +13,17 @@ import * as Location from "expo-location";
 import chagingPods from "./chargingPodLocations.json";
 import ChargingPodCard from "./ChargingPodCard";
 import { SearchBar } from "@rneui/themed";
+import * as WebBrowser from "expo-web-browser";
+import * as Google from "expo-auth-session/providers/google";
+import Constants from "expo-constants";
+import { makeRedirectUri } from "expo-auth-session";
+
+const ANDROID_CLIENT_ID =
+  "914408899369-kro84vfft4d5cb3gh2fo7cqggbooj297.apps.googleusercontent.com";
+const WEB_CLIENT_ID =
+  "914408899369-fbc08p3jil62e5d6sm1up4v3s8pcjf3f.apps.googleusercontent.com";
+const IOS_CLINET_ID =
+  "914408899369-kku8vkojon6a0vrk5krmgfl7klsqie65.apps.googleusercontent.com";
 
 const Home = () => {
   const [location, setLocation] = useState();
@@ -20,6 +31,18 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [snapshot, setSnapshot] = useState(null);
   const mapRef = useRef();
+  const [userInfo, setUserInfo] = useState(null);
+
+  const config = {
+    androidClientId: ANDROID_CLIENT_ID,
+    webClientId: WEB_CLIENT_ID,
+    iosClientId: IOS_CLINET_ID,
+    useProxy: true,
+    scopes: ["profile", "email"],
+    redirectUri: makeRedirectUri(),
+  };
+
+  const [request, response, promptAsync] = Google.useAuthRequest(config);
 
   useEffect(() => {
     fetchLocation();
@@ -49,6 +72,7 @@ const Home = () => {
 
   const handleCaptureScreen = async () => {
     try {
+      promptAsync();
       const _snapshot = await mapRef.current.takeSnapshot({
         format: "png",
         quality: 0.8,
