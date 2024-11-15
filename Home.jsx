@@ -8,7 +8,8 @@ import {
   Button,
 } from "react-native";
 import { useState, useEffect, useRef } from "react";
-import * as Location from 'expo-location';
+import * as Location from "expo-location";
+import chagingPods from './chargingPodLocations.json'
 
 const Home = () => {
   const [location, setLocation] = useState();
@@ -22,22 +23,22 @@ const Home = () => {
     try {
       setLoading(true);
       let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        console.log('Permission to access location was denied');
+      if (status !== "granted") {
+        console.log("Permission to access location was denied");
         return;
       }
 
       let locationData = await Location.getCurrentPositionAsync({});
       setLocation(locationData);
     } catch (error) {
-      console.log('Error fetching location');
+      console.log("Error fetching location");
     } finally {
       setLoading(false);
     }
   };
 
-  if(loading || !location || Object.keys(location).length === 0) {
-    return (<></>);
+  if (loading || !location || Object.keys(location).length === 0) {
+    return <></>;
   }
 
   return (
@@ -64,6 +65,16 @@ const Home = () => {
             resizeMode="contain"
           />
         </Marker>
+
+        {chagingPods.chargers.map((charger, index) => (
+          <Marker
+            key={index}
+            coordinate={{
+              latitude: parseFloat(charger.latitude),
+              longitude: parseFloat(charger.longitude),
+            }}
+          />
+        ))}
       </MapView>
     </View>
   );
@@ -82,7 +93,7 @@ const styles = StyleSheet.create({
   marker: {
     height: 40,
     width: 40,
-  }
+  },
 });
 
 export default Home;
