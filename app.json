@@ -29,10 +29,15 @@
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
       ],
-      "package": "com.amaresh-07.WireoneAssessment"
+      "package": "com.amaresh07.Wireoneassessment"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "719e3c45-058a-4e34-9201-502e3651a96f"
+      }
     }
   }
 }
