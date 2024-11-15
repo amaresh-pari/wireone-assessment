@@ -3,7 +3,7 @@
 		{
 			"name": "expressway charging - mariam enterprise",
 			"id": "a001",
-			"address": "connaught place, delhi",
+			"address": "ECR, Chennai",
 			"distance": "2102",
 			"distance_metrics": "metres",
 			"latitude": "37.789",
@@ -11,14 +11,14 @@
 			"connector_types": ["lvl1dc-2", "lvl2dc-1", "normalac-1"]
 		},
 		{
-			"name": "expressway charging - mariam enterprise",
+			"name": "expressway charging station",
 			"id": "a001",
-			"address": "connaught place, delhi",
-			"distance": "2102",
+			"address": "OMR, Chennai",
+			"distance": "4403",
 			"distance_metrics": "metres",
 			"latitude": "37.794",
 			"longitude": "-122.415",
-			"connector_types": ["lvl1dc-2", "lvl2dc-1", "normalac-1"]
+			"connector_types": ["lvl1dc-1", "lvl2dc-1", "normalac-2"]
 		}
 	]
 }

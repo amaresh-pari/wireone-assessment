@@ -6,7 +6,7 @@ const ChargingPodCard = ({ chargingPod }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerWrap}>
-        <View style={{marginRight: 10}}>
+        <View style={{ marginRight: 10 }}>
           <Text numberOfLines={1} ellipsizeMode="tail" style={styles.name}>
             {chargingPod.name}
           </Text>
@@ -28,7 +28,7 @@ const ChargingPodCard = ({ chargingPod }) => {
       <Text style={styles.connectors}>SUPPORTED CONNECTORS</Text>
 
       {chargingPod.connector_types.map((connector, index) => (
-        <View style={styles.charger}>
+        <View key={index} style={styles.charger}>
           <View style={styles.chargerType}>
             <Image
               source={require("./assets/charger.png")}
