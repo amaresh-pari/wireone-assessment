@@ -11,22 +11,22 @@ To run the project locally or generate APK/IPA, ensure you have the following in
 
 ## Running the Project Locally
 
-#Clone the repository and Install dependencies
+### Clone the repository and Install dependencies
 npm install
 
-# Start the development server
+### Start the development server
 npx expo start
 
 ## Generating APK/IPA
 
-# Install the required global dependencies
+### Install the required global dependencies
 npm install -g expo-cli
 npm install -g eas-cli
 
-# Log in to your Expo account
+### Log in to your Expo account
 eas login
 
-# Generate the APK (Android)
+### Generate the APK (Android)
 eas build --platform android
 
 # Generate the IPA (iOS)
