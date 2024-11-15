@@ -31,3 +31,11 @@ eas build --platform android
 
 ### Generate the IPA (iOS)
 eas build --platform ios
+
+## Screenshot
+
+<img width="1440" alt="Screenshot 2024-11-15 at 7 10 51 PM" src="https://github.com/user-attachments/assets/a6d0b401-a1e4-432b-84ae-8614e52b997f">
+
+<img width="1440" alt="Screenshot 2024-11-15 at 7 11 12 PM" src="https://github.com/user-attachments/assets/26033664-0bdb-4dcf-824d-e689b24766fc">
+
+
