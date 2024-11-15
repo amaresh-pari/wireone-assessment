@@ -13,13 +13,23 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "We need your location to show your current position on the map.",
+        "NSLocationAlwaysUsageDescription": "We need your location in the background to provide real-time updates."
+      },
+      "bundleIdentifier": "com.amaresh-07.WireoneAssessment"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "package": "com.amaresh-07.WireoneAssessment"
     },
     "web": {
       "favicon": "./assets/favicon.png"
