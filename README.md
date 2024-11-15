@@ -29,5 +29,5 @@ eas login
 ### Generate the APK (Android)
 eas build --platform android
 
-# Generate the IPA (iOS)
+### Generate the IPA (iOS)
 eas build --platform ios
