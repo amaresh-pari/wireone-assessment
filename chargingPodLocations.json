@@ -12,13 +12,23 @@
 		},
 		{
 			"name": "expressway charging station",
-			"id": "a001",
+			"id": "a002",
 			"address": "OMR, Chennai",
 			"distance": "4403",
 			"distance_metrics": "metres",
 			"latitude": "37.794",
 			"longitude": "-122.415",
 			"connector_types": ["lvl1dc-1", "lvl2dc-1", "normalac-2"]
+		},
+		{
+			"name": "expressway charging station 2",
+			"id": "a003",
+			"address": "Navalur, Chennai",
+			"distance": "8403",
+			"distance_metrics": "metres",
+			"latitude": "37.794",
+			"longitude": "-122.415",
+			"connector_types": ["lvl1dc-5", "lvl2dc-3", "normalac-2"]
 		}
 	]
 }

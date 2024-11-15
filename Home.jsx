@@ -60,8 +60,6 @@ const Home = () => {
     }
   };
 
-  console.log(snapshot);
-
   if (loading || !location || Object.keys(location).length === 0) {
     return <ActivityIndicator />;
   }
@@ -92,15 +90,24 @@ const Home = () => {
           />
         </Marker>
 
-        {chagingPods.chargers.map((charger, index) => (
-          <Marker
-            key={index}
-            coordinate={{
-              latitude: parseFloat(charger.latitude),
-              longitude: parseFloat(charger.longitude),
-            }}
-          />
-        ))}
+        {chagingPods.chargers.map((charger, index) => {
+          // adding random values to lat and long of current location so other markers are nearby
+          const randomLatOffset = Math.random() * (0.02 - 0.001) + 0.001;
+          const randomLongOffset = Math.random() * (0.02 - 0.001) + 0.001;
+
+          const newLatitude = location.coords.latitude + randomLatOffset;
+          const newLongitude = location.coords.longitude + randomLongOffset;
+
+          return (
+            <Marker
+              key={index}
+              coordinate={{
+                latitude: newLatitude,
+                longitude: newLongitude,
+              }}
+            />
+          );
+        })}
       </MapView>
 
       <SafeAreaView style={styles.searchWrap}>
